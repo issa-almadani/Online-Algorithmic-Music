@@ -2,10 +2,21 @@
 <h2>by Issa</h2>
 
 <script>
+  
+  // this is how we create an audio context
 	const ctx = new window.AudioContext()
   
   // Source Node = Tone ...etc.
   const osc = ctx.createOscillator()
   
+  // sawtooth + square + triangle...etc.
+  osc.type = 'sine'
   
+  osc.frequency.value = 440
+  
+  osc.connect(ctx.destination)
+  
+  osc.start(ctx.currentTime)
+  osc.stop(ctx.currentTime + 5)
+
 </script>
